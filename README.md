@@ -1,78 +1,95 @@
-# Finolens  
-### Agentic Intelligent Investment Recommendation Engine (AIAG09)
+# 📊 Finolens – AI Investment Advisor  
+**Agentic Portfolio Allocation using Adaptive Intelligence**
 
-## Problem Statement
-95% of Indian retail investors rely on gut feeling or social media tips rather than structured financial strategies. Existing robo-advisors provide static allocations and fail to adapt to market conditions, user behavior, and life events.
+Finolens is an **agent-based decision-support system** that helps Indian retail investors make **adaptive and explainable portfolio allocation decisions** across **Equity, Debt, and Gold** based on changing market conditions.
 
----
-
-## Solution Overview
-**Finolens** is an **Agentic AI-powered investment advisor** that dynamically adjusts portfolio allocations using:
-
-- Multi-agent orchestration
-- Reinforcement Learning (DRL – PPO)
-- Behavior-aware and risk-aware decision logic
+> Finolens does **not execute trades**.  
+> It provides **intelligent, explainable investment recommendations**.
 
 ---
 
-## Agentic Architecture
-
-### Agents Used
-- Market Agent – tracks volatility and trends
-- Risk Agent – evaluates downside exposure
-- Behaviour Agent – models panic selling
-- Goal Agent – aligns portfolio with financial goals
-- DRL Policy Agent – outputs optimal allocations
-- Explanation Agent – explains decisions using LLMs
-
-### Orchestration
-- **n8n** acts as the central agent coordinator
-- Uses conditional logic and memory
-- Calls DRL policy service for decisions
+## 🚨 Problem Statement
+95% of Indian retail investors rely on gut feeling or social media tips instead of structured financial strategies.  
+Existing robo-advisors offer **static, generic allocations** that fail to adapt to market volatility, leading to suboptimal long-term outcomes.
 
 ---
 
-## Tech Stack
-
-### Agentic AI Tool
-- n8n
-
-### Backend
-- Python
-- FastAPI
-- Stable-Baselines3 (PPO)
-
-### Frontend
-- React.js
-
-### AI / LLM
-- OpenAI API or Ollama
+## 💡 Solution
+Finolens acts as an **agentic AI advisor** that:
+- Observes market signals (e.g., volatility)
+- Classifies market conditions dynamically
+- Recommends adaptive portfolio allocation
+- Explains *why* each decision is made
 
 ---
 
-## Project Structure
+## 🧠 System Architecture
 
-Finolens/
-├── backend/
-├── frontend/
-├── n8n/
-├── docs/
-├── README.md
-└── .gitignore
+Frontend → n8n (Agent Orchestrator) → FastAPI (Decision Engine) → n8n → Frontend
 
+
+- **Frontend**: User interaction & visualization  
+- **n8n**: Agent orchestration & decision packaging  
+- **FastAPI**: Market reasoning & allocation logic  
 
 ---
 
-## Development Phases
-- Phase 0: Project setup & GitHub
-- Phase 1: DRL backend
-- Phase 2: n8n agent orchestration
-- Phase 3: Frontend MVP
-- Phase 4: Hosting & demo
+## 🤖 Why It Is Agentic
+Finolens follows the **agent loop**:
+Observe → Decide → Act → Explain
+
+
+| Stage | Component |
+|------|----------|
+Observe | Webhook + HTTP Request |
+Analyze | FastAPI decision engine |
+Decide | n8n Edit Fields (Set node) |
+Explain | Natural-language output |
+
+The agent is **distributed**, with the **Set node acting as the policy & decision layer**.
 
 ---
 
-## Team
-AIAG09 Hackathon  
-Project: Finolens
+## 📈 Asset Allocation Logic
+- **Equity**: Growth-focused, higher risk  
+- **Debt**: Stability and predictable returns  
+- **Gold**: Hedge and risk protection  
+
+Allocation dynamically adapts based on market volatility.
+
+---
+
+## 📡 Live API Example
+```bash
+curl -X POST http://localhost:5678/webhook/finolens-invest
+{
+  "market_condition": "volatile",
+  "allocation": { "equity": 0.5, "debt": 0.3, "gold": 0.2 },
+  "explanation": "Equity exposure reduced due to high volatility."
+}
+```
+
+🔮 Future Scope
+
+    Real-time market APIs (VIX, indices, gold prices)
+
+    News & sentiment analysis
+
+    Personalized investor profiles
+
+    ML / LLM-based decision models
+
+🏆 Key Highlights
+
+    Agentic decision-making (not static rules)
+
+    Explainable AI recommendations
+
+    Modular, production-style architecture
+
+    extensible
+
+
+
+
 
